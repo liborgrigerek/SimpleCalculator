@@ -64,4 +64,22 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>openshift</id>
+			<build>
+				<finalName>{APP_NAME}</finalName>
+				<plugins>
+					<plugin>
+						<artifactId>maven-war-plugin</artifactId>
+						<configuration>
+							<outputDirectory>webapps</outputDirectory>
+							<warName>ROOT</warName>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
