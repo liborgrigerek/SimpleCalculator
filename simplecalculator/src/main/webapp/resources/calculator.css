@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+.container {
+   max-width: 500px;
+   padding-top: 50px;
+   
+   
+}
+
+.btn {
+    border-radius:0;
+    border-color: #ededed;
+    width:125px; 
+}
+
+.display {
+    border-radius:0;
+    border: 2px solid black;
+    height: 75px;
+    font-size:40px;
+    background-color: #f7f7f7;
+}
+
+.col-xs-3 {
+   padding: 0px;
+}

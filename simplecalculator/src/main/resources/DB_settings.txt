@@ -1,0 +1,25 @@
+// sudo -u postgres psql
+CREATE DATABASE simplecalculator TEMPLATE template0 ENCODING 'UTF8' LC_COLLATE 'cs_CZ.UTF-8' LC_CTYPE 'cs_CZ.UTF-8';
+
+// sudo -u postgres psql simplecalculator
+CREATE SCHEMA simplecalculator;
+CREATE USER simplecalculator PASSWORD 'simplecalculator';
+GRANT ALL ON SCHEMA simplecalculator TO simplecalculator;
+GRANT ALL ON ALL TABLES IN SCHEMA simplecalculator TO simplecalculator;
+
+// psql -h localhost -p 5432 -U user simplecalculator
+
+CREATE TABLE calculations 
+(id SERIAL NOT NULL,
+time TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
+formula VARCHAR(256) NOT NULL,
+result VARCHAR(256) NOT NULL,
+PRIMARY KEY (id)
+);
+
+
+INSERT INTO calculations (formula, result) 
+VALUES ('1 + 1 + 2', '4');
+
+INSERT INTO calculations (formula, result) 
+VALUES ('2 * 4', '8');
